@@ -1,0 +1,51 @@
+<div class="container">
+    <div class = "flex"><img routerLink="/banks" src="https://img.icons8.com/sf-regular-filled/48/000000/back.png"/>
+         <h2> Bank Details</h2></div>
+    <div class="mat-elevation-z1">
+        
+            <mat-form-field class="text-field" appearance="fill">
+                <mat-label>ID</mat-label>
+                <input disabled matInput name="name" [value]="bankDetails.id">
+            </mat-form-field>
+        
+            <mat-form-field class="text-field" appearance="fill">
+                <mat-label>Bank Name</mat-label>
+                <input disabled matInput name="name"  [value]="bankDetails.name">
+            </mat-form-field>
+        
+            <mat-form-field class="text-field" appearance="fill">
+                <mat-label>Account Number</mat-label>
+                <input disabled matInput name="account_no" 
+                    [value]="bankDetails.account_no">
+            </mat-form-field>
+        
+            <mat-form-field class="text-field" appearance="fill">
+                <mat-label>Swift Number</mat-label>
+                <input disabled matInput name="swift" [value]="bankDetails.swift">
+            </mat-form-field>
+        
+            <div>
+                <mat-form-field class="text-field" appearance="fill">
+                    <mat-label>Routing Number</mat-label>
+                    <input disabled matInput name="routing_number"
+                        [value]="bankDetails.routing_number">
+                </mat-form-field>
+            </div>
+        
+            <div>
+                <mat-form-field class="text-field" appearance="fill">
+                    <mat-label>Comment</mat-label>
+                    <textarea matInput name="comment" [(ngModel)]="comment" placeholder="Post your comments here"
+                        ></textarea>
+                </mat-form-field>
+            </div>
+        
+            <mat-form-field class="text-field" appearance="fill">
+                <mat-label>Comment Date</mat-label>
+                <input disabled matInput name="routing_number" [(ngModel)]="commentDate">
+            </mat-form-field>
+        <div class = "row">
+            <button mat-raised-button color = "primary" (click) = "submit()" type = "submit">Update</button>
+        </div>
+    </div>
+</div>

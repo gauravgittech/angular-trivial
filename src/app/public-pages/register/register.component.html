@@ -1,0 +1,33 @@
+<div class = "flex-spread">
+  <h2>Create an account</h2>
+  <img (click) = "dialog.closeAll()" src="https://img.icons8.com/sf-regular-filled/48/000000/multiply.png"/>
+  </div>
+<form class="example-form" [formGroup]="registerForm" (ngSubmit)="register()">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input  type = "text" matInput formControlName="name" name = "name" placeholder="Enter full name" value="">
+        <mat-error *ngIf="userName.touched && userName.invalid" [ngClass] = "'error'"> Name is required. </mat-error>
+      </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input  type = "email" matInput formControlName="email" name = "email" placeholder="Ex. john@yahoo.in" value="">
+      <mat-error *ngIf="userEmail.touched && userEmail.invalid" [ngClass] = "'error'"> Email is required. </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type = "password"  matInput formControlName="password" placeholder="Enter Password">
+      <mat-error *ngIf="userPassword.touched && userPassword.invalid" [ngClass] = "'error'"> Password is required. </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Repeat Password</mat-label>
+        <input type = "password"  matInput formControlName="repeatPassword" placeholder="Repeat Password">
+        <mat-error *ngIf="userRepeatPassword.touched && userRepeatPassword.invalid" [ngClass] = "'error'"> Password is required. </mat-error>
+      </mat-form-field>
+    <div class = "button-cont">
+    <button mat-raised-button color ="primary" type = "submit" >Create</button>
+    <div class = "dont-have"><label>Already have an account? </label> <span (click)="authService.openModal('login')">Login</span></div>
+    </div>  
+  </form>

@@ -1,0 +1,29 @@
+.container{
+    margin: 80px 20%;
+    .flex{
+        display: flex;
+        img{
+            height: 17px;
+            margin-right: 3%;
+            margin-top: 1%;
+            cursor: pointer;
+        }
+    }
+    .mat-elevation-z1{
+        padding: 3% 5%;
+    }
+    .text-field{
+        width: 100%;
+        :disabled{
+            color:black;
+        }
+    }
+    .row{
+        text-align: center;
+        button {
+            width: 300px;
+            height: 50px;
+            font-size: 15px;
+        }
+    }
+}

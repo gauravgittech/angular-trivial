@@ -1,0 +1,22 @@
+@import "../../../theme/palette.scss";
+
+.container{
+    margin: 80px 15%;
+    .table-container{
+    table {
+        width: 100%;
+        .ellipsis{
+          white-space: nowrap; 
+          max-width: 100px; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-right: 15px;
+        }
+        .hyperlink{
+          cursor: pointer;
+          text-decoration: underline;
+          color: $primary;
+        }
+      }
+    }
+}
