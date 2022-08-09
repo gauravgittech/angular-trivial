@@ -25,7 +25,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
             if (index < maxRetries && error.status == 500) {
               return of(error).pipe(delay(delayMs));
             }
-            this.toastr.error(error,'Something went wrong')
+            this.toastr.error(error.message,error.name)
             throw error;
           })
         )

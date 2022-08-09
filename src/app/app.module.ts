@@ -8,7 +8,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
-import { OAuthModule } from 'angular-oauth2-oidc';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorHandlerInterceptor } from './error-handler/error-handler.interceptor';
 
@@ -25,7 +24,6 @@ import { ErrorHandlerInterceptor } from './error-handler/error-handler.intercept
     BrowserAnimationsModule,
     SharedComponentsModule,
     HttpClientModule,
-    OAuthModule.forRoot(),
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right'
     }),

@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -32,6 +33,7 @@ import { FormsModule }   from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     FormsModule
   ]

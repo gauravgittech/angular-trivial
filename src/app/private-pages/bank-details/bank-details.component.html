@@ -35,8 +35,10 @@
             <div>
                 <mat-form-field class="text-field" appearance="fill" color ="accent">
                     <mat-label>Comment</mat-label>
-                    <textarea matInput name="comment" [(ngModel)]="comment" placeholder="Post your comments here"
+                    <textarea matInput name="comment"  pattern='^[a-zA-Z0-9\s .,!?"-]+$' [(ngModel)]="comment"
+                    #commentField="ngModel" placeholder="Post your comments here"
                         ></textarea>
+                        <mat-error *ngIf = "commentField.errors && commentField.errors['pattern']">Special characters are not allowed(Only English and Numbers)</mat-error>
                 </mat-form-field>
             </div>
         
@@ -45,7 +47,7 @@
                 <input disabled matInput name="routing_number" [(ngModel)]="commentDate">
             </mat-form-field>
         <div class = "row">
-            <button mat-raised-button color = "primary" (click) = "submit()" type = "submit">Update</button>
+            <button mat-raised-button color = "primary" (click) = "!commentField.errors && submit()" type = "submit">Update</button>
         </div>
     </div>
 </div>

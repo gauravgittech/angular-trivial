@@ -1,7 +1,7 @@
 {
   "name": "cibc",
   "short_name": "cibc",
-  "theme_color": "#1976d2",
+  "theme_color": "#C41F3E",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

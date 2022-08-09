@@ -2,11 +2,15 @@
     margin: 80px 20%;
     .flex{
         display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        h2{
+            margin-bottom: 0px;
+        }
         img{
-            height: 17px;
-            margin-right: 3%;
-            margin-top: 1%;
             cursor: pointer;
+            height: 17px;
+            margin-right: 10px;
         }
     }
     .mat-elevation-z1{
@@ -21,9 +25,14 @@
     .row{
         text-align: center;
         button {
-            width: 300px;
+            width: 35%;
             height: 50px;
             font-size: 15px;
         }
     }
+}
+@media only screen and (max-width: 500px) {
+    .container{
+        margin: 80px 5%;
+    }  
 }
