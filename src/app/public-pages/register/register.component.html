@@ -3,28 +3,33 @@
   <img (click) = "dialog.closeAll()" src="https://img.icons8.com/sf-regular-filled/48/000000/multiply.png"/>
   </div>
 <form class="example-form" [formGroup]="registerForm" (ngSubmit)="register()">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill" color="accent" >
         <mat-label>Name</mat-label>
-        <input  type = "text" matInput formControlName="name" name = "name" placeholder="Enter full name" value="">
+        <input  type = "text" matInput  formControlName="name" name = "name" placeholder="Enter full name" value="">
         <mat-error *ngIf="userName.touched && userName.invalid" [ngClass] = "'error'"> Name is required. </mat-error>
       </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill" color="accent">
       <mat-label>Email</mat-label>
       <input  type = "email" matInput formControlName="email" name = "email" placeholder="Ex. john@yahoo.in" value="">
-      <mat-error *ngIf="userEmail.touched && userEmail.invalid" [ngClass] = "'error'"> Email is required. </mat-error>
+      <mat-error *ngIf="userEmail.errors?.required" [ngClass] = "'error'"> Email is required. </mat-error>
+      <mat-error *ngIf="userEmail.errors?.email" [ngClass] = "'error'"> Enter a valid email. </mat-error>
     </mat-form-field>
   
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill" color="accent">
       <mat-label>Password</mat-label>
       <input type = "password"  matInput formControlName="password" placeholder="Enter Password">
-      <mat-error *ngIf="userPassword.touched && userPassword.invalid" [ngClass] = "'error'"> Password is required. </mat-error>
+      <mat-error *ngIf="userPassword.errors?.required" [ngClass] = "'error'"> Password is required. </mat-error>
+      <mat-error *ngIf="userPassword.errors?.minlength" [ngClass] = "'error'"> Password should be atleast 8 character long. </mat-error>
+
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="fill" color="accent">
         <mat-label>Repeat Password</mat-label>
-        <input type = "password"  matInput formControlName="repeatPassword" placeholder="Repeat Password">
-        <mat-error *ngIf="userRepeatPassword.touched && userRepeatPassword.invalid" [ngClass] = "'error'"> Password is required. </mat-error>
+        <input type = "password"  matInput formControlName="repeatPassword" placeholder="Repeat Password" [pattern]="userPassword.value">
+        <mat-error *ngIf="userRepeatPassword.errors?.required" [ngClass] = "'error'"> Repeat Password is required. </mat-error>
+        <mat-error *ngIf="userRepeatPassword.errors?.pattern" [ngClass] = "'error'"> Password do not match. </mat-error>
+
       </mat-form-field>
     <div class = "button-cont">
     <button mat-raised-button color ="primary" type = "submit" >Create</button>

@@ -17,8 +17,8 @@ export class RegisterComponent implements OnInit {
     private router: Router, public authService: AuthService
   ) { }
   registerForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required,Validators.email]),
+    password: new FormControl('', [Validators.required,Validators.minLength(8)]),
     repeatPassword: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required)
   })
@@ -46,14 +46,6 @@ export class RegisterComponent implements OnInit {
         password: this.registerForm.value.password
       }
       this.authService.createUser(creds).subscribe(res => {
-        console.log(res)
-        if (res) {
-          const savedUrl = localStorage.getItem('savedUrl')
-          if (savedUrl) {
-            /** redirect to detail page if request came before login */
-            this.router.navigate([savedUrl])
-          }
-        }
         this.dialog.closeAll()
       })
     }

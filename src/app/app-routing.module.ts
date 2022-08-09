@@ -2,6 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './gaurds/auth.guard'
 
+/** Homepage is /banks
+ * Implemented lazy loading 
+ * route gaurds implemented for keeping bank details private
+ * public pages is accessible without login
+ * private pages can be accessed only after login
+ */
+
 const routes: Routes = [
   {
     path: 'banks',
@@ -14,6 +21,11 @@ const routes: Routes = [
   },
   {
     path: '',
+    redirectTo: '/banks',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
     redirectTo: '/banks',
     pathMatch: 'full'
   }

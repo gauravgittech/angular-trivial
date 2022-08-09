@@ -32,7 +32,10 @@ export class BankListComponent implements AfterViewInit {
   }
 
   getAllBanks() {
-
+    /** Get the list from the API and save it in the localStorage
+     * fetch the list from localStorage
+     * the record stored locally in order to post the comments
+     */
     if (!localStorage.getItem('bankList')) {
 
       this.bankListService.getBankList().subscribe((res: BankInformation[]) => {
@@ -50,7 +53,7 @@ export class BankListComponent implements AfterViewInit {
   }
 
   redirectTo(bank: BankInformation) {
-
+    /** Pass the variable in the query Params */
     this.router.navigate(['/bank-details'], {
       queryParams: {
         id: bank.id,

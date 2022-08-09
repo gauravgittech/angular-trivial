@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { ToastrModule } from 'ngx-toastr';
+import { ErrorHandlerInterceptor } from './error-handler/error-handler.interceptor';
 
 
 
@@ -35,7 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 <div class="toolbar" role="banner">
     <img
      (click) = "home()"
+     matTooltip="Homepage"
       width="60"
       alt="Cibc Logo"
       src="https://www.cibc.com/content/dam/global-assets/logos/cibc-logos/no-tagline/cibc-logo-colour-142x36.svg"/>
@@ -11,6 +12,7 @@
         <button mat-stroked-button color = "accent" type = "button" (click) = "authService.openModal('register')">Register</button>
         </div>
         <ng-template #elseBlock>
-          <img (click) = "logout()" height="25px" src="https://img.icons8.com/sf-regular/48/000000/exit.png"/>
+          <img (click) = "logout()"  matTooltip="Logout"
+          height="25px" src="https://img.icons8.com/sf-regular/48/000000/exit.png"/>
           </ng-template>
   </div>

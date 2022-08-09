@@ -24,7 +24,7 @@ export class TopNavComponent implements OnInit {
       this.router.navigate(['/banks'])
     }
     logout(){
-      this.authService.setLogIn();
+      this.authService.setLogInStatus();
     }
 
 }
