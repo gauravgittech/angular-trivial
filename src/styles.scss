@@ -14,26 +14,26 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$cibc-primary: mat.define-palette($brand-red);
-$cibc-accent: mat.define-palette($brand-green);
+$banking-primary: mat.define-palette($brand-red);
+$banking-accent: mat.define-palette($brand-green);
 
 // The warn palette is optional (defaults to red).
-$cibc-warn: mat.define-palette(mat.$red-palette);
+$banking-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$cibc-theme: mat.define-light-theme((
+$banking-theme: mat.define-light-theme((
   color: (
-    primary: $cibc-primary,
-    accent: $cibc-accent,
-    warn: $cibc-warn,
+    primary: $banking-primary,
+    accent: $banking-accent,
+    warn: $banking-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($cibc-theme);
+@include mat.all-component-themes($banking-theme);
 
 /* You can add global styles to this file, and also import other style files */
 // @import "@angular/material/prebuilt-themes/purple-green.css";

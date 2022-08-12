@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/cibc",
+    "public": "dist/banking",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -1,6 +1,6 @@
 {
-  "name": "cibc",
-  "short_name": "cibc",
+  "name": "banking",
+  "short_name": "banking",
   "theme_color": "#C41F3E",
   "background_color": "#fafafa",
   "display": "standalone",
